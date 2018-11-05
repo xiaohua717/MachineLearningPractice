@@ -70,17 +70,18 @@ def main1():
 
     # 4 liner
 
-    print(np.eye(3))  # 对角矩阵
-    lst = np.array([[1., 2.],
-                    [3., 4.]])
-    print(lst.dtype)
-    print(inv(lst))
-    print(lst.transpose())
-    print(det(lst))
-    print(eig(lst))
-    y = np.array([[5.], [7.]])
-    print(solve(lst, y))
+    # print(np.eye(3))  # 对角矩阵
+    # lst = np.array([[1., 2.],
+    #                 [3., 4.]])
+    # print(lst.dtype)
+    # print(inv(lst))
+    # print(lst.transpose())
+    # print(det(lst))
+    # print(eig(lst))
+    # y = np.array([[5.], [7.]])
+    # print(solve(lst, y))
 
+    print(np.full((2,3), 5))
 
 if __name__ == '__main__':
     main1()
