@@ -9,19 +9,6 @@ leafNode = dict(boxstyle="round4", fc="0.8")
 arrow_args = dict(arrowstyle="<-")
 
 
-def plotNode(nodeTxt, centerPt, parentPt, nodeType):
-    createPlot.ax1.annotate(nodeTxt, xy=parentPt, xycoords="axes fraction", xytext=centerPt, textcoords="axes fraction",
-                            va="center", ha="center", bbox=nodeType, arrowprops=arrow_args)
-
-
-def createPlotTest():
-    fig = plt.figure(1, facecolor="white")
-    fig.clf()
-    createPlot.ax1 = plt.subplot(111, frameon=False)
-    plotNode("决策节点", (0.5, 0.1), (0.1, 0.5), decisionNode)
-    plotNode("叶节点", (0.8, 0.1), (0.3, 0.8), leafNode)
-    plt.show()
-
 
 def getNumLeafs(myTree):
     numLefts = 0
@@ -66,6 +53,10 @@ def retrieveTree(i):
                     }]
     return listOfTrees[i]
 
+def plotNode(nodeTxt, centerPt, parentPt, nodeType):
+    createPlot.ax1.annotate(nodeTxt, xy=parentPt,  xycoords='axes fraction',
+             xytext=centerPt, textcoords='axes fraction',
+             va="center", ha="center", bbox=nodeType, arrowprops=arrow_args )
 
 def plotMidText(cntrPt, parentPt, txtString):
     xMid = (parentPt[0] - cntrPt[0]) / 2.0 + cntrPt[0]
@@ -87,8 +78,8 @@ def plotTree(myTree, parentPt, nodeTxt):
             plotTree(secondDict[key], cntrPt, str(key))
         else:
             plotTree.xOff = plotTree.xOff + 1.0 / plotTree.totalW
-        plotNode(secondDict[key], (plotTree.xOff, plotTree.yOff), cntrPt, leafNode)
-        plotMidText((plotTree.xOff, plotTree.yOff), cntrPt, str(key))
+            plotNode(secondDict[key], (plotTree.xOff, plotTree.yOff), cntrPt, leafNode)
+            plotMidText((plotTree.xOff, plotTree.yOff), cntrPt, str(key))
     plotTree.yOff = plotTree.yOff + 1.0 / plotTree.totalD
 
 
