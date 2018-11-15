@@ -111,7 +111,7 @@ if __name__ == '__main__':
     listOPosts, listClasses = loadDataSet()
     myVocabList = createVocabList(listOPosts)
     trainMat = []
-    for postinDoc in listOPosts:41
+    for postinDoc in listOPosts:
         trainMat.append(setOfWords2Vec(myVocabList, postinDoc))
     p0V, p1V, pAb = trainNB0(trainMat, listClasses)
     print(p0V)
@@ -124,5 +124,4 @@ if __name__ == '__main__':
     testEntry = ['stupid', 'garbage']
     thisDoc = numpy.array(setOfWords2Vec(myVocabList, testEntry))
     print(testEntry, 'classified as: ', classifyNB(thisDoc, p0V, p1V, pAb))
-
 
