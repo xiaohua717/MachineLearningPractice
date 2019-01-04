@@ -81,7 +81,16 @@ def main1():
     # y = np.array([[5.], [7.]])
     # print(solve(lst, y))
 
-    print(np.full((2,3), 5))
+    # print(np.full((2,3), 5))
+    import numpy
+    pp = numpy.array((1, 3, 5))
+    print(pp)
+    mm = numpy.array([2, 4, 6])
+    print(mm)
+    nn = numpy.array([(1, 2, 3), [4, 5, 6]])
+    print(nn)
+    print(nn[0])
+
 
 if __name__ == '__main__':
     main1()
